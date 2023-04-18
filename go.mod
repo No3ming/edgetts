@@ -1,4 +1,4 @@
-module github.com/longbai/edgetts
+module github.com/No3ming/edgetts
 
 go 1.20
 

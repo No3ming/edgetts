@@ -3,9 +3,6 @@ package edgetts
 import (
 	"context"
 	"fmt"
-	"github.com/gorilla/websocket"
-	"github.com/longbai/xiaobot/edgetts"
-	uuid "github.com/satori/go.uuid"
 	"log"
 	"math/rand"
 	"net"
@@ -13,6 +10,9 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	"github.com/gorilla/websocket"
+	uuid "github.com/satori/go.uuid"
 )
 
 const (
@@ -277,7 +277,7 @@ func CreateStyleSSML(text, voiceName, style string) string {
 }
 
 func (t *EdgeTTS) TextToMp3(text string, ttsLang string, filePath string) error {
-	ttsEdge := edgetts.TTS{}
+	ttsEdge := EdgeTTS{}
 	ssml := CreateSSML(text, ttsLang)
 	log.Println(ssml)
 	b, err := ttsEdge.GetAudio(ssml, voiceFormat)
